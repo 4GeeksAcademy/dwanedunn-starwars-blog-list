@@ -19,9 +19,9 @@ export const Navbar = () => {
             >
               Favorites <span className="badge bg-secondary">1</span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li>
-                <a class="dropdown-item" href="#">
+                <a className="dropdown-item" href="#">
                   Action
                 </a>
               </li>
