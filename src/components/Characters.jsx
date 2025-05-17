@@ -18,6 +18,7 @@ export const Characters = () => {
         console.error('Error fetching characters:', error);
       }
     }
+    fetchCharacters();
   }, []);
 
   return (
