@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Item } from './Item';
 
 export const People = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -58,14 +59,20 @@ export const People = () => {
       <div className="text-left ms-3">
         <h2 className="text-danger">People</h2>
       </div>
-      <ul>
-        {/* Test the datafetch */}
+      <div className="card-group">
         {people.map((person) => {
-          return <li key={person.uid}>{person.name}</li>;
+          // return <li key={person.uid}>{person.name}</li>;
+          return (
+            <Item
+              key={person.uid}
+              imgURL={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
+              imgAlt={person.name}
+              itemTitle={person.name}
+              itemDesc={`Height: ${person.height} cm`}
+            />
+          );
         })}
-        {/* {peopleList} */}
-        {/* <li key={person.uid}>{person.name}</li> */}
-      </ul>
+      </div>
     </>
   );
 };
