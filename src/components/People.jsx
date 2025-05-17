@@ -68,7 +68,7 @@ export const People = () => {
               imgURL={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
               imgAlt={person.name}
               itemTitle={person.name}
-              itemDesc={`Height: ${person.height} cm`}
+              itemDesc={`Height: ${person?.height} cm`}
             />
           );
         })}
