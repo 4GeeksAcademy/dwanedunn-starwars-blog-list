@@ -2,24 +2,26 @@ import { useEffect, useState } from 'react';
 
 export const Characters = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [posts, setPosts] = useState([]);
+  const [people, setPeople] = useState([]);
   const [error, setError] = useState(null);
-  const BASE_URL = 'https://www.swapi.tech/api/';
-  const END_POINT = 'people/';
-  const URL = BASE_URL + END_POINT;
+  const BASE_URL = 'https://www.swapi.tech/api/people/';
+  // const END_POINT = 'people/';
+  // const URL = BASE_URL + END_POINT;
+  // const URL = BASE_URL;
   console.log(URL);
+  console.log(BASE_URL);
 
   useEffect(() => {
     const fetchCharacters = async () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch(`${URL}`);
+        const response = await fetch(`${BASE_URL}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
-          const posts = await response.json();
-          console.log(posts);
-          setPosts(posts);
+          const data = await response.json();
+          console.log(data);
+          setPeople(data);
         }
       } catch (error) {
         setError(error);
@@ -51,7 +53,7 @@ export const Characters = () => {
   if (!isLoading && !error) {
     return (
       <div className="text-center">
-        <h2 className="text-danger">No Characters Found</h2>
+        <h2 className="text-danger">No People Found</h2>
       </div>
     );
   }
@@ -63,8 +65,8 @@ export const Characters = () => {
       </div>
       <ul>
         {/* Test the datafetch */}
-        {posts.map((post) => {
-          return <li key={post.id}>post.title</li>;
+        {people.map((person) => {
+          return <li key={person.uid}>person.name</li>;
         })}
       </ul>
     </>
