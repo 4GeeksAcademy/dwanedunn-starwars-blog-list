@@ -6,8 +6,8 @@ export const Home = () => {
 
   return (
     <>
-      <div className="text-left mt-5">
-        <h2>Characters</h2>
+      <div className="text-left ms-3">
+        <h2 className="text-danger">Characters</h2>
       </div>
       <section></section>
     </>
