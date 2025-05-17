@@ -16,7 +16,7 @@ export const Characters = () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch(`${BASE_URL}`);
+        const response = await fetch(`https://www.swapi.tech/api/people/`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
           const data = await response.json();
