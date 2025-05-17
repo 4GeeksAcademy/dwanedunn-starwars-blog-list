@@ -4,7 +4,7 @@ export const Characters = () => {
   useEffect(() => {
     async function fetchCharacters() {
       const base_url = 'https://www.swapi.tech/api/';
-      const endPoint = 'characters/1/';
+      const endPoint = 'characters/';
       const url = base_url + endPoint;
       console.log(url);
       try {
