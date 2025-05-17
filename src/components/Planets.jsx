@@ -39,7 +39,7 @@ export const Planets = () => {
 
   return (
     <div>
-      <h3>Planets</h3>
+      <h3 className="text-danger ms-4">Planets</h3>
       <ul>
         {planets.map((planet) => {
           return <li key={planet.uid}>{planet.name}</li>;
