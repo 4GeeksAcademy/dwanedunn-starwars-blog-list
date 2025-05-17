@@ -1,17 +1,22 @@
-export const Card = (props) => {
+import { Link } from 'react-router-dom';
+
+export const Card = ({
+  imgURL,
+  imgAlt,
+  itemName,
+  itemDescription,
+  linkURL,
+  linkText,
+}) => {
   return (
     <div className="card" style={{ width: '18rem' }}>
-      <img
-        src="https://via.placeholder.com/150"
-        className="card-img-top"
-        alt="{props.title}"
-      />
+      <img src="{imgURL}" className="card-img-top" alt="{imgAlt}" />
       <div className="card-body">
-        <h5 className="card-title">{props.title}</h5>
-        <p className="card-text">{props.description}</p>
-        <a href="#" className="btn btn-primary">
-          {props.linkText}
-        </a>
+        <h5 className="card-title">{itemName}</h5>
+        <p className="card-text">{itemDescription}</p>
+        <Link href="{linkURL}" className="btn btn-primary">
+          {linkText}
+        </Link>
       </div>
     </div>
   );

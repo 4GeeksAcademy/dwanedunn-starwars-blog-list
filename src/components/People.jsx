@@ -4,7 +4,7 @@ export const People = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [people, setPeople] = useState([]);
   const [error, setError] = useState();
-  const BASE_URL = "https://www.swapi.tech/api/people/";
+  const BASE_URL = 'https://www.swapi.tech/api/people/';
   // const END_POINT = 'people/';
   // const URL = BASE_URL + END_POINT;
   // const URL = BASE_URL;
@@ -16,13 +16,15 @@ export const People = () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch("https://www.swapi.tech/api/people?page=1&limit=8");
+        const response = await fetch(
+          'https://www.swapi.tech/api/people?page=1&limit=8'
+        );
         if (response.ok) {
           // throw new Error('Network response was not ok');
           const data = await response.json();
-          console.log("this is the data:",data);
+          console.log('this is the data:', data);
           setPeople(data.results);
-          console.log("this is the people:", typeof people);
+          console.log('this is the people:', typeof people);
         }
       } catch (error) {
         setError(error);
@@ -51,20 +53,6 @@ export const People = () => {
     );
   }
 
-  // if (!isLoading && !error) {
-  //   return (
-  //     <div className="text-center">
-  //       <h2 className="text-danger">No People Found</h2>
-  //     </div>
-  //   );
-  // }
-//  let peopleList = people.map((person)=>(
-//   <li key={person.uid}>{person.name}</li>  
-//  ))
-  
- 
-
- 
   return (
     <>
       <div className="text-left ms-3">
@@ -73,7 +61,7 @@ export const People = () => {
       <ul>
         {/* Test the datafetch */}
         {people.map((person) => {
-         return  <li key={person.uid}>{person.name}</li>;
+          return <li key={person.uid}>{person.name}</li>;
         })}
         {/* {peopleList} */}
         {/* <li key={person.uid}>{person.name}</li> */}
