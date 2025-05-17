@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-export const Characters = () => {
+export const People = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [people, setPeople] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState();
   const BASE_URL = 'https://www.swapi.tech/api/people/';
   // const END_POINT = 'people/';
   // const URL = BASE_URL + END_POINT;
@@ -12,7 +12,7 @@ export const Characters = () => {
   console.log(BASE_URL);
 
   useEffect(() => {
-    const fetchCharacters = async () => {
+    const fetchPeople = async () => {
       setIsLoading(true);
 
       try {
@@ -30,7 +30,7 @@ export const Characters = () => {
       }
     };
 
-    fetchCharacters();
+    fetchPeople();
   }, []);
 
   if (isLoading) {
@@ -61,7 +61,7 @@ export const Characters = () => {
   return (
     <>
       <div className="text-left ms-3">
-        <h2 className="text-danger">Characters</h2>
+        <h2 className="text-danger">People</h2>
       </div>
       <ul>
         {/* Test the datafetch */}
