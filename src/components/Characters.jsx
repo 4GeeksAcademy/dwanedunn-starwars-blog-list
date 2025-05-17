@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export const characters = () => {
+export const Characters = () => {
   useEffect(() => {
     async function fetchCharacters() {
       const base_url = 'https://www.swapi.tech/api/';
