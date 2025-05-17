@@ -19,6 +19,12 @@ export const characters = () => {
       }
     }
   }, []);
-  //   document.title = 'Characters';
-  return <div>characters</div>;
+
+  return (
+    <>
+      <div className="text-left ms-3">
+        <h2 className="text-danger">Characters</h2>
+      </div>
+    </>
+  );
 };

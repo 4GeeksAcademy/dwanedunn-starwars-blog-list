@@ -6,10 +6,10 @@ export const Home = () => {
 
   return (
     <>
-      <div className="text-left ms-3">
-        <h2 className="text-danger">Characters</h2>
-      </div>
-      <section></section>
+      Display the Characters Component
+      <Characters />
+      Display the Characters Component
+      <Planets />
     </>
   );
 };
