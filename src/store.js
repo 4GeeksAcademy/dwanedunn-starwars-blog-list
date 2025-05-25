@@ -1,6 +1,16 @@
 export const initialStore = () => {
   return {
     // message: null,
+    PEOPLE_URL: 'https://www.swapi.tech/api/people',
+    PLANETS_URL: 'https://www.swapi.tech/api/planets',
+    VEHICLES_URL: 'https://www.swapi.tech/api/vehicles',
+    PEOPLE_IMGAES_URL:
+      'https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/people',
+    PLANETS_IMAGES_URL:
+      'https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/planet',
+    VEHICLES_IMAGES_URL:
+      'https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicle',
+
     planets: [{}],
     people: [{}],
     vehicles: [{}],
