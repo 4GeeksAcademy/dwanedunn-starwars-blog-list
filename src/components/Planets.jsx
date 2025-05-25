@@ -17,8 +17,7 @@ export const Planets = () => {
           'https://www.swapi.tech/api/planets?page=1&limit=8'
         );
         const data = await response.json();
-        console.log('this is the data:', data);
-        console.log('this is the data.results:', data.results);
+
         setPlanets(data.results);
       } catch (error) {
         setError(error);
