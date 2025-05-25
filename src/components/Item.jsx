@@ -6,7 +6,7 @@ export const Item = ({ imgURL, imgAlt, itemTitle, itemDesc }) => {
         <h5 className="card-title">{itemTitle}</h5>
         <p className="card-text">{itemDesc}</p>
         <p className="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
+          <small className="text-muted">Last updated 3 mins ago</small>
         </p>
       </div>
     </div>

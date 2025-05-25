@@ -23,9 +23,7 @@ export const People = () => {
         if (response.ok) {
           // throw new Error('Network response was not ok');
           const data = await response.json();
-          console.log('this is the data:', data);
           setPeople(data.results);
-          console.log('this is the people:', typeof people);
         }
       } catch (error) {
         setError(error);
