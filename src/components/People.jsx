@@ -6,31 +6,27 @@ export const People = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [people, setPeople] = useState([]);
   const [error, setError] = useState();
-  const BASE_URL = 'https://www.swapi.tech/api/people/';
+  const BASE_URL = 'https://www.swapi.tech/api/people/?page=1&limit=8';
 
-  console.log(URL);
   console.log(BASE_URL);
+  const fetchPeople = async () => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(`${BASE_URL}`);
+      if (response.ok) {
+        const peopleResponse = await response.json();
+        console.log('People fetch: ', peopleResponse);
+        setPeople(peopleResponse.results || []);
+      }
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchPeople = async () => {
-      setIsLoading(true);
-
-      try {
-        const response = await fetch(
-          `${initialStore.PEOPLE_URL}` // Using the initialStore constant
-        );
-        if (response.ok) {
-          const data = await response.json();
-          console.log(data);
-          setPeople(data.results);
-        }
-      } catch (error) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     fetchPeople();
   }, []);
 
