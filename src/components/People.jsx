@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Item } from './Item';
+import storeReducer, { initialStore } from '../store';
 
 export const People = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -16,11 +17,11 @@ export const People = () => {
 
       try {
         const response = await fetch(
-          'https://www.swapi.tech/api/people?page=1&limit=8'
+          `${initialStore.PEOPLE_URL}` // Using the initialStore constant
         );
         if (response.ok) {
-          // throw new Error('Network response was not ok');
           const data = await response.json();
+          console.log(data);
           setPeople(data.results);
         }
       } catch (error) {
