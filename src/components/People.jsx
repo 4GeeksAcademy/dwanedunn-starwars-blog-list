@@ -16,7 +16,7 @@ export const People = () => {
       const response = await fetch(`${BASE_URL}`);
       if (response.ok) {
         const peopleResponse = await response.json();
-        console.log('People fetch: ', peopleResponse);
+        console.log('People fetch: ', peopleResponse.results);
         setPeople(peopleResponse.results || []);
       }
     } catch (error) {
@@ -57,7 +57,7 @@ export const People = () => {
           return (
             <Item
               key={person.uid}
-              imgURL={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg`}
+              imgURL={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg.jpg`}
               imgAlt={person.name}
               itemTitle={person.name}
               itemDesc={`Height: ${person?.height} cm`}
