@@ -6,9 +6,7 @@ export const People = () => {
   const [people, setPeople] = useState([]);
   const [error, setError] = useState();
   const BASE_URL = 'https://www.swapi.tech/api/people/';
-  // const END_POINT = 'people/';
-  // const URL = BASE_URL + END_POINT;
-  // const URL = BASE_URL;
+
   console.log(URL);
   console.log(BASE_URL);
 
