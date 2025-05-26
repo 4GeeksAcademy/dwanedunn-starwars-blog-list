@@ -59,7 +59,6 @@ export const People = () => {
       </div>
       <div className="card-group">
         {people.map((person) => {
-          // return <li key={person.uid}>{person.name}</li>;
           return (
             <Item
               key={person.uid}
