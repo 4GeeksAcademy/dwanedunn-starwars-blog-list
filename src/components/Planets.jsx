@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useState, useEffect } from 'react';
 import { Card } from './Card';
 
 export const Planets = () => {
@@ -15,7 +14,6 @@ export const Planets = () => {
         'https://www.swapi.tech/api/planets?page=1&limit=8'
       );
       const data = await response.json();
-
       setPlanets(data.results);
     } catch (error) {
       setError(error);
