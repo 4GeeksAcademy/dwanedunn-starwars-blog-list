@@ -13,9 +13,9 @@ export const Planets = () => {
       const response = await fetch(
         'https://www.swapi.tech/api/planets?page=1&limit=8'
       );
-      const data = await response.json();
-      setPlanets(data.results);
-      console.log('planets:', planets);
+      const planetResponse = await response.json();
+      setPlanets(planetResponse.results);
+      console.log('planets:', planetResponse.results);
     } catch (error) {
       setError(error);
     } finally {
@@ -45,8 +45,7 @@ export const Planets = () => {
       <h3 className="text-danger ms-4">Planets</h3>
       <ul>
         {planets.map((planet) => {
-          return;
-          <li key={planet.uid}>{planet.name}</li>;
+          return <li key={planet.uid}>{planet.name}</li>;
         })}
       </ul>
     </div>
