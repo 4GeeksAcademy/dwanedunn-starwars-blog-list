@@ -12,7 +12,7 @@ export const People = () => {
 
     try {
       const PEOPLE_URL = `https://www.swapi.tech/api/people?page=1&limit=8`;
-      console.log('PEOPLE_URL: ', PEOPLE_URL);
+
       const response = await fetch(`${PEOPLE_URL}`);
       const peopleResponse = await response.json();
       setPeople(peopleResponse.results);
