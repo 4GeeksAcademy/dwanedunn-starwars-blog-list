@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { use } from 'react';
+import { useState, useEffect } from 'react';
 import { Card } from './Card';
 
 export const Planets = () => {
@@ -7,34 +7,38 @@ export const Planets = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [planets, setPlanets] = useState([]);
 
+  const fetchPlanets = async () => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        'https://www.swapi.tech/api/planets?page=1&limit=8'
+      );
+      const data = await response.json();
+
+      setPlanets(data.results);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchPlanets = async () => {
-      setIsLoading(true);
-
-      try {
-        //   Limit the number of planets to 8 on 1 page
-        const response = await fetch(
-          'https://www.swapi.tech/api/planets?page=1&limit=8'
-        );
-        const data = await response.json();
-
-        setPlanets(data.results);
-      } catch (error) {
-        setError(error);
-        console.log('this is the error:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    // Call the fetchPlanets function
     fetchPlanets();
-
-    // Only run the effect once when the component mounts
   }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="text-center">
+        <h2 className="text-danger">Error: {error.message}</h2>
+        <p>Something went wrong! Please refresh the page to try again!</p>
+      </div>
+    );
   }
 
   return (
