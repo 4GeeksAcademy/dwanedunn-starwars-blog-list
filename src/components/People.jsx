@@ -6,18 +6,16 @@ export const People = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [people, setPeople] = useState([]);
   const [error, setError] = useState();
-  const BASE_URL = 'https://www.swapi.tech/api/people/?page=1&limit=8';
 
-  console.log(BASE_URL);
   const fetchPeople = async () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${BASE_URL}`);
+      const response = await fetch(`${initialStore.PEOPLE_URL}`);
       if (response.ok) {
         const peopleResponse = await response.json();
         console.log('People fetch: ', peopleResponse.results);
-        setPeople(peopleResponse.results || []);
+        setPeople(peopleResponse.results);
       }
     } catch (error) {
       setError(error);
@@ -57,7 +55,8 @@ export const People = () => {
           return (
             <Item
               key={person.uid}
-              imgURL={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg.jpg`}
+              // imgURL={`https://starwars-visualguide.com/assets/img/characters/${person.uid}.jpg.jpg`}
+              imgURL="https://picsum.photos/200/300"
               imgAlt={person.name}
               itemTitle={person.name}
               itemDesc={`Height: ${person?.height} cm`}
