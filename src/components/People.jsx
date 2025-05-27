@@ -12,11 +12,8 @@ export const People = () => {
 
     try {
       const response = await fetch(`${initialStore.PEOPLE_URL}`);
-      if (response.ok) {
-        const peopleResponse = await response.json();
-        console.log('People fetch: ', peopleResponse.results);
-        setPeople(peopleResponse.results);
-      }
+      const peopleResponse = await response.json();
+      setPeople(peopleResponse.results);
     } catch (error) {
       setError(error);
     } finally {
