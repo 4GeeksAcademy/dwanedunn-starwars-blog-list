@@ -11,8 +11,8 @@ export const People = () => {
     setIsLoading(true);
 
     try {
+      setIsLoading(true);
       const PEOPLE_URL = `https://www.swapi.tech/api/people?page=1&limit=8`;
-
       const response = await fetch(`${PEOPLE_URL}`);
       const peopleResponse = await response.json();
       setPeople(peopleResponse.results);
