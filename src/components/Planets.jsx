@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from './Card';
+// import { Card } from './Card';
 
 export const Planets = () => {
   const [error, setError] = useState();
@@ -15,6 +15,7 @@ export const Planets = () => {
       );
       const data = await response.json();
       setPlanets(data.results);
+      console.log('planets:', planets);
     } catch (error) {
       setError(error);
     } finally {
@@ -42,22 +43,12 @@ export const Planets = () => {
   return (
     <div className="d-flex flex-row flex-nowrap justify-content-evenly overflow-scroll">
       <h3 className="text-danger ms-4">Planets</h3>
-
-      {planets.map((planet) => {
-        // return <li key={planet.uid}>{planet.name}</li>;
-        return;
-        <Card
-          key={planet.uid}
-          title={planet.name}
-          imgURL={planet.image}
-          imgAlt={planet.imgAlt}
-          itemName={planet.name}
-          itemDescription={planet.description}
-          linkURL={planet.linkURL}
-          linkText={planet.linkText}
-          // <Link to={`/planets/${planet.uid}`}>{planet.name}</Link>
-        />;
-      })}
+      <ul>
+        {planets.map((planet) => {
+          return;
+          <li key={planet.uid}>{planet.name}</li>;
+        })}
+      </ul>
     </div>
   );
 };
