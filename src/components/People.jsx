@@ -57,7 +57,7 @@ export const People = () => {
               imgURL="https://picsum.photos/200/300"
               imgAlt={person.name}
               itemTitle={person.name}
-              itemDesc={`Height: ${person?.height} cm`}
+              // itemDesc={`Height: ${person?.height} cm`}
             />
           );
         })}
