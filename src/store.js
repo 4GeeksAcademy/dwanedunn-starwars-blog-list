@@ -21,6 +21,7 @@ export default function storeReducer(store, action = {}) {
   switch (action.type) {
     case 'add_task':
       const { id, color } = action.payload;
+      // add a case for setting up people
 
       return {
         ...store,

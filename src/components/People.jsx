@@ -16,6 +16,8 @@ export const People = () => {
       const peopleResponse = await response.json();
       setPeople(peopleResponse.results);
       console.log('people: ', peopleResponse.results);
+      // dispatch the peopleResponse.resulte to the store.
+      // but first setup the store to handle it
     } catch (error) {
       setError(error);
     } finally {
