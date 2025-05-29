@@ -15,6 +15,7 @@ export const People = () => {
       const response = await fetch(`${LOCAL_PEOPLE_URL}`);
       const peopleResponse = await response.json();
       setPeople(peopleResponse.results);
+      console.log(peopleResponse.results);
     } catch (error) {
       setError(error);
     } finally {
