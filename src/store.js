@@ -11,9 +11,9 @@ export const initialStore = () => {
     VEHICLES_IMAGES_URL:
       'https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicle',
 
-    planets: [{}],
-    people: [{}],
-    vehicles: [{}],
+    planets: [],
+    people: [],
+    vehicles: [],
   };
 };
 
