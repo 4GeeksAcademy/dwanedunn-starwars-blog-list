@@ -14,16 +14,16 @@ export const initialStore = () => {
     VEHICLES_IMAGES_URL:
       'https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicle',
 
-    planets: [],
-    people: [],
-    vehicles: [],
+    Stored_Planets: [],
+    Stored_People: [],
+    Stored_Vehicles: [],
   };
 };
 
 export  storeReducer = (state, action)=>{
   switch (action.type)  {
-    case '':
-      return {...state,}
+    case 'Add_People':
+
     default:
       throw new Error(`Unknown action type: ${action.type}`);
 
