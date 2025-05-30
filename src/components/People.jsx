@@ -11,7 +11,7 @@ export const People = () => {
     setIsLoading(true);
 
     try {
-      const LOCAL_PEOPLE_URL = `https://www.swapi.tech/api/people?page=1&limit=8`;
+      const LOCAL_PEOPLE_URL = `https://www.swapi.tech/api/people?page=1&limit=8&expanded=true`;
       const response = await fetch(`${LOCAL_PEOPLE_URL}`);
       const peopleResponse = await response.json();
       setPeople(peopleResponse.results);
