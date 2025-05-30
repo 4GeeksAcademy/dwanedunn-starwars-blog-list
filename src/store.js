@@ -14,18 +14,28 @@ export const initialStore = () => {
     VEHICLES_IMAGES_URL:
       'https://raw.githubusercontent.com/breatheco-de/swapi-images/master/public/images/vehicle',
 
-    Stored_Planets: [],
-    Stored_People: [],
-    Stored_Vehicles: [],
+    Planets: [],
+    People: [],
+    Vehicles: [],
   };
 };
 
-export  storeReducer = (state, action)=>{
-  switch (action.type)  {
-    case 'Add_People':
-
-    default:
-      throw new Error(`Unknown action type: ${action.type}`);
-
+export const storeReducer = (store, action) => {
+  switch (action.type) {
+    case 'FETCH_SUCCESS_PEOPLE':
+      return {
+        ...store,
+        People: action.payload, // Update the People array in the store
+      };
+    case 'FETCH_SUCCESS_PLANETS':
+      return {
+        ...store,
+        Planets: action.payload, // Update the Planets array in the store
+      };
+    case 'FETCH_SUCCESS_VEHICLES':
+      return {
+        ...store,
+        Vehicles: action.payload, // Update the Vehicles array in the store
+      };
   }
 };
