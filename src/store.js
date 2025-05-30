@@ -20,19 +20,12 @@ export const initialStore = () => {
   };
 };
 
-export default function storeReducer(store, action = {}) {
-  switch (action.type) {
-    case 'added_people':
-      const { peopleData } = action.payload;
-      return { ...store, peopleData: action.payload };
-    case 'added_planets':
-      const { planetsData } = action.payload;
-      return { ...store, planetsData: action.payload };
-    case 'added_vehicles':
-      const { vehiclesData } = action.payload;
-      return { ...store, vehiclesData: action.payload };
-
+export  storeReducer = (state, action)=>{
+  switch (action.type)  {
+    case '':
+      return {...state,}
     default:
-      throw Error('Unknown action.');
+      throw new Error(`Unknown action type: ${action.type}`);
+
   }
-}
+};
