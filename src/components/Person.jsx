@@ -1,9 +1,7 @@
-import React from 'react'
-// Display a single Person
+import React from 'react';
+// Display s Single Person
 const Person = () => {
-  return // Display a single Person(
-    <div>Person</div>
-  )
-}
+  return <div>Person</div>;
+};
 
-export default Person
+export default Person;
