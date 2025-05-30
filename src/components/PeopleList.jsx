@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Item } from './Item';
+import Person from './Person';
 import storeReducer, { initialStore } from '../store';
 
 export const People = () => {
