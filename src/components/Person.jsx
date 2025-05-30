@@ -1,5 +1,5 @@
 import React from 'react';
-// Display s Single Person
+// Display a Single Person
 const Person = () => {
   return <div>Person</div>;
 };
