@@ -22,7 +22,9 @@ export const initialStore = () => {
 
 export default function storeReducer(store, action = {}) {
   switch (action.type) {
-    case 'add_task':
+    case 'added_people':
+    case 'added_planets':
+    case 'added_vehicles':
       const { id, color } = action.payload;
       // add a case for setting up people
 
